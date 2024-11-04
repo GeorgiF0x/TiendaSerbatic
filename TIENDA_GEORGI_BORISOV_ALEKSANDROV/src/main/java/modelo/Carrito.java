@@ -14,10 +14,10 @@ import java.util.Date;
 @NoArgsConstructor // Genera un constructor sin parámetros
 @AllArgsConstructor // Genera un constructor con todos los parámetros
 public class Carrito {
-    private int id;                // ID del carrito
-    private int usuarioId;         // ID del usuario que posee el carrito (puede ser null si es anónimo)
-    private int productoId;        // ID del producto en el carrito
-    private int unidades;          // Cantidad del producto en el carrito
-    private Date fechaCreacion;    // Fecha en que se añadió al carrito
+    private int id;                
+    private int usuarioId;         
+    private int productoId;        
+    private int unidades;          
+    private Date fechaCreacion;    
 }
 

@@ -10,7 +10,8 @@ public class Conexion {
     static String login = "root"; // Usuario de la base de datos
     static String password = ""; // Contraseña del usuario
     static String host = "127.0.0.1"; // Dirección del host (localhost)
-    static int port = 3307; // Puerto de MySQL
+    // static int port = 3307; // Puerto de MySQL CASA
+    static int port = 3306; // Puerto de MySQL CLASE
 
     static String url = "jdbc:mysql://" + host + ":" + port + "/" + bd; // URL de conexión
     static Connection conexion; // Atributo para guardar el objeto Connection

@@ -10,6 +10,7 @@
 	<div class="container-fluid">
 	    <div class="d-flex justify-content-center align-items-center py-3">
         <img src="${pageContext.request.contextPath}/img/tituloHeader.png" alt="Necromunda City" class="header-img">
+    	</div>
     </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark rounded mx-5">
@@ -46,7 +47,7 @@
             </li>
             <% if (request.getSession().getAttribute("usuario") != null) { %>
                 <li class="nav-item">
-                    <form action="CerrarSession" method="post">
+                    <form action="CerrarSesion" method="post">
                         <button type="submit" class="btn btn-outline-danger ml-2"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
                     </form>
                 </li>
@@ -61,3 +62,4 @@
         </ul>
     </div>
 </nav>
+

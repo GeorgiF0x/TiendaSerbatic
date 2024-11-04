@@ -60,5 +60,25 @@ public class CarritoDao {
             return false;
         }
     }
+    
+    public static void updateUnidadesCarrito(int usuarioId, int productoId, int nuevasUnidades) {
+        String sql = "UPDATE carrito SET unidades = ? WHERE usuario_id = ? AND producto_id = ?";
+        
+        try {
+            PreparedStatement pstmt = FactoryBD.realizaConsulta(sql, nuevasUnidades, usuarioId, productoId); 
+            int rowsUpdated = pstmt.executeUpdate(); 
+            
+            if (rowsUpdated > 0) {
+                System.out.println("Unidades actualizadas exitosamente.");
+            } else {
+                System.out.println("No se encontró el producto en el carrito.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            FactoryBD.cerrarRecursos(null, null); 
+        }
+    }
+
 }
 

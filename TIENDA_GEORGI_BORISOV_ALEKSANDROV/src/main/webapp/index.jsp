@@ -25,23 +25,25 @@
         if (productos != null && !productos.isEmpty()) {
             for (Producto producto : productos) {
     %>
-		<div class="col-md-4 mb-4">
-		    <div class="card">
-		        <img src="./<%= producto.getImagen() %>" class="card-img-top img-fluid p-3" alt="Imagen de Producto" style="object-fit: contain;">
-		        <div class="card-body">
-		            <h5 class="card-title"><%= producto.getNombre() %></h5>
-		            <p class="card-text">Descripción: <%= producto.getDescripcion() %></p>
-		            <p class="card-text">Precio: $<%= producto.getPrecio() %></p>
-		            <form action="carritoServlet" method="post" class="d-flex align-items-center" style="justify-content: space-around;">
-		                <input type="hidden" name="productoId" value="<%= producto.getId() %>">
-		                <input type="number" name="cantidad" min="1" class="form-control me-2" placeholder="Cantidad" required style="width: 70px;">
-		                <button type="submit" class="btn btn-primary">
-		                    <i class="fas fa-shopping-cart"></i>
-		                </button>
-		            </form>
-		        </div>
-		    </div>
-		</div>
+<div class="col-md-4 mb-4">
+    <div class="card">
+        <img src="./<%= producto.getImagen() %>" class="card-img-top img-fluid" alt="Imagen de Producto" style="object-fit: contain; height: 200px;">
+        <div class="card-body">
+            <h5 class="card-title"><%= producto.getNombre() %></h5>
+            <p class="card-text">Descripción: <%= producto.getDescripcion() %></p>
+            <p class="card-text">Precio: $<%= producto.getPrecio() %></p>
+            <form action="CarritoController" method="post" class="d-flex align-items-center mt-3">
+                <input type="hidden" name="productoId" value="<%= producto.getId() %>">
+                <input type="hidden" name="productoNombre" value="<%= producto.getNombre() %>">
+                <input type="number" name="cantidad" min="1" class="form-control me-2" placeholder="Cantidad" required style="width: 70px;">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Añadir
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 
 

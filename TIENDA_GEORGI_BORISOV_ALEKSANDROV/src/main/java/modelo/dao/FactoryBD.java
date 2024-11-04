@@ -14,7 +14,7 @@ public class FactoryBD {
         PreparedStatement pstmt = null;
 
         try {
-            conn = Conexion.getConexion(); // Obtiene la conexión del Singleton
+            conn = Conexion.getConexion(); 
             pstmt = conn.prepareStatement(sql);
             
             // Establecer parámetros
